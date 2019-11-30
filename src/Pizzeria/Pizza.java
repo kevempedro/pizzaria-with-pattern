@@ -3,10 +3,11 @@ package Pizzeria;
 public class Pizza {
 	private boolean tomato;
 	private boolean onion;
+	private String name;
 	private String size;
 	private boolean pepper;
 	private boolean catupiry;
-	private String statusOrder = "WAITING";
+	private String statusOrder = "Your pizza is wating";
 	
 	public boolean isTomato() {
 		return tomato;
@@ -24,6 +25,14 @@ public class Pizza {
 		this.onion = onion;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getSize() {
 		return size;
 	}

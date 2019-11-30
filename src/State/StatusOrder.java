@@ -1,5 +1,7 @@
 package State;
 
+import Pizzeria.Pizza;
+
 public interface StatusOrder {
-	public void changeStatusOrder();
+	public void changeStatusOrder(Pizza pizza);
 }

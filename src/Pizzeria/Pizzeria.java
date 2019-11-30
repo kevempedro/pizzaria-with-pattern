@@ -1,30 +1,27 @@
 package Pizzeria;
 
 import State.*;
-import Util.ExceptionPizza;
 
 public class Pizzeria {
 	
 	private StatusOrder statusOrder;
-
-	public void selldPizza(String flavor) {
-		
-	}
 	
-	public void changeStatusOrder(String status) throws ExceptionPizza {
-		if(status.equalsIgnoreCase("doing")) {
+	public void changeStatusOrder(String status, Pizza pizza) {
+		if(status.equalsIgnoreCase("Doing")) {
 			this.statusOrder = new Doing();
-			this.statusOrder.changeStatusOrder();
+			this.statusOrder.changeStatusOrder(pizza);
 			
-		} else if(status.equalsIgnoreCase("done")) {
+		} else if(status.equalsIgnoreCase("Done")) {
 			this.statusOrder = new Done();
-			this.statusOrder.changeStatusOrder();
+			this.statusOrder.changeStatusOrder(pizza);
 			
-		} else if(status.equalsIgnoreCase("canceled")) {
+		} else if(status.equalsIgnoreCase("Canceled")) {
 			this.statusOrder = new Canceled();
-			this.statusOrder.changeStatusOrder();
+			this.statusOrder.changeStatusOrder(pizza);
 		}
 		
-		throw new ExceptionPizza();
+		this.statusOrder = new Doing();
+		this.statusOrder.changeStatusOrder(pizza);
+		
 	}
 }

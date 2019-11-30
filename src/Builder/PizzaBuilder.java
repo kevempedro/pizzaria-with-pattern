@@ -29,6 +29,11 @@ public class PizzaBuilder {
 		return this;
 	}
 	
+	public PizzaBuilder isNome(String name) {
+		this.pizza.setName(name);
+		return this;
+	}
+	
 	public PizzaBuilder isSize(String size) {
 		this.pizza.setSize(size);
 		return this;
