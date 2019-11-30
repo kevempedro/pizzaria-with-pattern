@@ -6,6 +6,7 @@ public class Pizza {
 	private String size;
 	private boolean pepper;
 	private boolean catupiry;
+	private String statusOrder = "WAITING";
 	
 	public boolean isTomato() {
 		return tomato;
@@ -45,5 +46,13 @@ public class Pizza {
 	
 	public void setCatupiry(boolean catupiry) {
 		this.catupiry = catupiry;
+	}
+	
+	public String getStatusOrder() {
+		return statusOrder;
+	}
+
+	public void setStatusOrder(String statusOrder) {
+		this.statusOrder = statusOrder;
 	}
 }

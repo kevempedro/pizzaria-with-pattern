@@ -1,21 +1,30 @@
 package Pizzeria;
 
+import State.*;
+import Util.ExceptionPizza;
+
 public class Pizzeria {
-	private String statusOrder = "WAITING";
 	
-	public String getStatusOrder() {
-		return statusOrder;
-	}
+	private StatusOrder statusOrder;
 
-	public void setStatusOrder(String statusOrder) {
-		this.statusOrder = statusOrder;
-	}
-
-	public void selldPizza(String sabor) {
+	public void selldPizza(String flavor) {
 		
 	}
 	
-	public void changeStatusOrder() {
+	public void changeStatusOrder(String status) throws ExceptionPizza {
+		if(status.equalsIgnoreCase("doing")) {
+			this.statusOrder = new Doing();
+			this.statusOrder.changeStatusOrder();
+			
+		} else if(status.equalsIgnoreCase("done")) {
+			this.statusOrder = new Done();
+			this.statusOrder.changeStatusOrder();
+			
+		} else if(status.equalsIgnoreCase("canceled")) {
+			this.statusOrder = new Canceled();
+			this.statusOrder.changeStatusOrder();
+		}
 		
+		throw new ExceptionPizza();
 	}
 }
