@@ -29,7 +29,7 @@ public class PizzaBuilder {
 		return this;
 	}
 	
-	public PizzaBuilder isNome(String name) {
+	public PizzaBuilder isName(String name) {
 		this.pizza.setName(name);
 		return this;
 	}
