@@ -18,10 +18,10 @@ public class Pizzeria {
 		} else if(status.equalsIgnoreCase("Canceled")) {
 			this.statusOrder = new Canceled();
 			this.statusOrder.changeStatusOrder(pizza);
+			
+		} else {
+			this.statusOrder = new Doing();
+			this.statusOrder.changeStatusOrder(pizza);
 		}
-		
-		this.statusOrder = new Doing();
-		this.statusOrder.changeStatusOrder(pizza);
-		
 	}
 }
